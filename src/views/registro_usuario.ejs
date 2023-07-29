@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("templates/header") %>
+<body>
+    <%- include("templates/navbar") %>
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column is-8 is-offset-2 mt-6">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            <h2>Registro de usuario</h2> 
+                            <form action="" id="register_form">
+                                <div class="field">
+                                    <label class="label" for="alias_input">Alias de usuario</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="text" name="alias_input"id="alias_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="mensaje_password"></p>
+                                </div>
+                                <div class="field">
+                                    <label class="label" for="email_input">Email</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="email" placeholder="Email input" name="email_input" id="email_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <a class="icon is-small is-right">
+                                            <i class="fas" ></i>
+                                        </a>
+                                    </div>
+                                    <p class="help is-success"></p>
+                                </div>
+                                <div class="field">
+                                    <label class="label" for="password_input">Password</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="password" name="password_input" id="password_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-key"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-eye-slash"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="mensaje_password"></p>
+                                </div>
+                                <div class="field">
+                                    <label class="label" for="password_confirm_input">Confirma el Password</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="password" name="password_confirm_input" id="password_confirm_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-key"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas fa-eye-slash"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="mensaje_password"></p>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="checkbox">
+                                        <input type="checkbox" name="show_password_cb" id="show_password_cb">
+                                            Ver contraseña
+                                        </label>
+                                    </div>
+                                </div>     
+                                <div class="field">
+                                    <label class="label" for="nombres_input">Nombres</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="text" name="nombres_input" id="nombres_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="mensaje_password"></p>
+                                </div>
+    
+                                <div class="field">
+                                    <label class="label" for="lastname_p_input">Apellido Paterno</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="text" name="lastname_p_input" id="lastname_p_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="mensaje_password"></p>
+                                </div>
+    
+                                <div class="field">
+                                    <label class="label" for="lastname_m_input">Apellido Materno</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="text" name="lastname_m_input" id="lastname_m_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="mensaje_password"></p>
+                                </div>
+    
+                                <div class="field">
+                                    <label class="label" for="bifth_date_input">Fecha de nacimiento</label>
+                                    <div class="control has-icons-left ">
+                                        <input class="input" type="date" name="bifth_date_input" id="bifth_date_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="mensaje_password"></p>
+                                </div>
+                                <div class="field">
+                                    <label class="label" for="phone_input">Telefono</label>
+                                    <div class="control has-icons-left has-icons-right">
+                                        <input class="input" type="number" name="phone_input" id="phone_input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-phone"></i>
+                                        </span>
+                                        <span class="icon is-small is-right">
+                                            <i class="fas"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="mensaje_password"></p>
+                                </div>
+                                <div class="field is-grouped">
+                                    <div class="control">
+                                        <button class="button is-link" id="send_btn">Enviar</button>
+                                    </div>
+                                    <div class="control">
+                                        <button class="button is-link is-light">Cancelar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("templates/footer") %>
+    <script src="<%= base_url %>js/register_new_user.js"></script>
+</body>
+</html>
