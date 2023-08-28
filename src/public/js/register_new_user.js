@@ -5,18 +5,48 @@ const fields_validations = [
     {
         field_name: "alias_input",
         validations: ["not_empty"],
-        errors: []
+        warnings: []
     },
     {
         field_name: "email_input",
         validations: ["not_empty", "email"],
-        errors: []
+        warnings: []
     },
     {
         field_name: "password_input",
-        validations: ["min_length-3", "max_length-4"],
-        errors: []
+        validations: ["not_empty", "min_length-6"],
+        warnings: []
     },
+    {
+        field_name: "password_confirm_input",
+        validations: ["not_empty", "min_length-6"],
+        warnings: []
+    },
+    {
+        field_name: "nombres_input",
+        validations: ["not_empty"],
+        warnings: []
+    },
+    {
+        field_name: "lastname_p_input",
+        validations: ["not_empty"],
+        warnings: []
+    },
+    {
+        field_name: "lastname_m_input",
+        validations: ["not_empty"],
+        warnings: []
+    },
+    {
+        field_name: "bifth_date_input",
+        validations: ["not_empty"],
+        warnings: []
+    },
+    {
+        field_name: "phone_input",
+        validations: ["not_empty"],
+        warnings: []
+    }
 ];
 
 send_btn.addEventListener("click", (e) => {
@@ -28,9 +58,14 @@ send_btn.addEventListener("click", (e) => {
         validate(field);
     }
 
-    console.log("fields_validations:", fields_validations);
-});
+    show_warnings(fields_validations)
+}); 
 
+const show_warnings = (fields_validations) => {
+    fields_validations.forEach(field => {
+        console.log(field);
+    });
+}
 
 const validate_string = (str, patern) => {
     const regex = new RegExp(patern);
@@ -70,21 +105,21 @@ const max_length = (field, max_length) => {
     return;
 }
 
-const validate = (field ) => {
+const validate = ( field ) => {
     for (const field_validation of fields_validations) {
         if(field_validation.field_name === field){
             for (const validation of field_validation.validations) {
                 if(validation === "not_empty"){
                     const result = not_empty(field_validation.field_name);
                     if(result){
-                        field_validation.errors.push(result);
+                        field_validation.warnings.push(result);
                     }
                 }
 
                 if(validation === "email"){
                     const result = email(field_validation.field_name);
                     if(result){
-                        field_validation.errors.push(result);
+                        field_validation.warnings.push(result);
                     }
                 }
 
@@ -92,7 +127,7 @@ const validate = (field ) => {
                     const validation_parts = validation.split("-");
                     const result = min_length(field_validation.field_name, validation_parts[1]);
                     if(result){
-                        field_validation.errors.push(result);
+                        field_validation.warnings.push(result);
                     }
                 }
 
@@ -100,7 +135,7 @@ const validate = (field ) => {
                     const validation_parts = validation.split("-");
                     const result = max_length(field_validation.field_name, validation_parts[1]);
                     if(result){
-                        field_validation.errors.push(result);
+                        field_validation.warnings.push(result);
                     }
                 }
             }
